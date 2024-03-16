@@ -1,0 +1,19 @@
+<div> 
+    <div class="card mb-3">
+        <div class = "card-header text-center"><h3>Create new appointment</h3></div>
+        <div class = "card-body mb-2">
+            <input class="form-control mb-1" type = "text" [(ngModel)]="newApptDescription" placeholder = "Enter Appointment Title"/>
+            <input class="form-control mb-1" type = "date" [(ngModel)]="newApptDate" placeholder = "Enter Appointment Date"/>
+            <button class="btn btn-primary" (click)="addOnClick()">Add</button>
+        </div>
+    </div>
+    <div>
+        <div class = "text-center"><h3>Appointments</h3></div>
+        <ul class="list-group">
+            <li class = "list-group-item d-flex" *ngFor = "let appointment of appointments; index as i">
+                <span class = "p-2 flex-grow-1">{{appointment.desc}} - {{appointment.date}}</span>
+                <button class="btn btn-danger p-2" (click) = "removeOnClick(i)">Remove</button>
+            </li>
+        </ul>
+    </div>
+</div>   
